@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "計算星期";
+}
+
+<br />
+
+<h2>計算星期</h2>
+
+@using (Html.BeginForm("Weekday", "Exam", FormMethod.Post))
+{
+    <p>請輸入數字：@Html.TextBox("weekday", null, new { type = "number", min = "1", max = "7", required = "true" }) <input type="submit" value="查詢" /></p>
+    if (ViewBag.weekdayInChinese != null)
+    {
+        <p>查詢結果：@ViewBag.weekdayInChinese</p>
+    }
+}
